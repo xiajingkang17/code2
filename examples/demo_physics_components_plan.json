@@ -1,0 +1,126 @@
+{
+  "problem_full_text": "通用组件库演示\n(1) 物理图组件",
+  "stem": "通用组件库演示",
+  "questions": [
+    {
+      "question_text": "物理图组件",
+      "analysis": {
+        "formulas": [],
+        "conditions": [],
+        "strategy": []
+      },
+      "steps": [
+        {
+          "line": "展示斜面与虚线辅助",
+          "subtitle": "Incline + DashedLine",
+          "visual_transform": [
+            {"action": "show", "target_id": "p_incline", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p_dash", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示圆轨道与角度标注",
+          "subtitle": "TrackArc + AngleMarker",
+          "visual_transform": [
+            {"action": "hide", "target_id": "p_incline", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "p_dash", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "p_arc", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p_angle", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示滑车与平台",
+          "subtitle": "Cart + Platform",
+          "visual_transform": [
+            {"action": "hide", "target_id": "p_arc", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "p_angle", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "p_cart", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p_platform", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示测距箭头与障碍",
+          "subtitle": "DimensionArrow + Obstacle",
+          "visual_transform": [
+            {"action": "hide", "target_id": "p_cart", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "p_platform", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "p_dim", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p_obstacle", "params": {}, "duration": 0.4}
+          ]
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [-6, 6],
+        "y_range": [-3.5, 3.5],
+        "children": [
+          {
+            "type": "incline",
+            "base": [-4, 0],
+            "length": 4.0,
+            "angle_deg": 35,
+            "id": "p_incline",
+            "visible": false
+          },
+          {
+            "type": "dashed_line",
+            "start": [-5, -1.2],
+            "end": [-1.0, -1.2],
+            "id": "p_dash",
+            "visible": false
+          },
+          {
+            "type": "track_arc",
+            "center": [-1.0, 0.3],
+            "radius": 1.0,
+            "start_angle_deg": -90,
+            "angle_deg": 180,
+            "id": "p_arc",
+            "visible": false
+          },
+          {
+            "type": "angle_marker",
+            "vertex": [-1.0, -0.7],
+            "p1": [-2.0, -0.7],
+            "p2": [-1.0, 0.3],
+            "label": "θ",
+            "id": "p_angle",
+            "visible": false
+          },
+          {
+            "type": "cart",
+            "pos": [2.0, -1.2],
+            "id": "p_cart",
+            "visible": false
+          },
+          {
+            "type": "platform",
+            "pos": [2.0, -2.0],
+            "width": 4.0,
+            "height": 0.3,
+            "hatch": true,
+            "id": "p_platform",
+            "visible": false
+          },
+          {
+            "type": "dimension_arrow",
+            "start": [0.0, -2.8],
+            "end": [4.5, -2.8],
+            "label": "L0",
+            "id": "p_dim",
+            "visible": false
+          },
+          {
+            "type": "obstacle",
+            "pos": [5.2, -2.0],
+            "width": 1.0,
+            "height": 0.8,
+            "style": "wood",
+            "id": "p_obstacle",
+            "visible": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+# Python related
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Byte-compiled / optimized files
+*.pyc
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.whl
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Mypy
+.mypy_cache/
+
+# PyBuilder
+target/
+
+# Sphinx
+docs/_build/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+*.iws
+*.sublime-workspace
+*.sublime-project
+
+# Editor swap/backup files
+*~
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and runtime files
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# LaTeX temporary files (manim often generates .tex files)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.pdf
+
+# Manim / media build outputs (ignore rendered media and generated assets)
+/media/
+media/
+images/
+
+# Common large or temporary media formats
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.gif
+*.avi
+*.wav
+
+# Secret / environment files
+.env
+.env.*
+*.pem
+*.key
+
+# Binary build artefacts
+*.so
+*.dylib
+*.dll
+
+# Node / frontend (if present)
+node_modules/
+npm-debug.log
+
+# Misc
+.cache/
+*.sqlite3
+
+# Uncomment to ignore large model weights / binaries if you don't track them in Git LFS
+# *.onnx
+# *.pt
+# *.pth
+# *.ckpt
+
+# Allowlist (example): if you want to keep a specific generated file, add a negation rule here
+# !media/keep_this_file.mp4

@@ -1,0 +1,73 @@
+{
+  "problem_full_text": "滑块与小车同步滑动\n(1) 小车带滑块一起运动",
+  "stem": "滑块与小车同步滑动",
+  "questions": [
+    {
+      "question_text": "小车带滑块一起运动",
+      "analysis": {
+        "formulas": [],
+        "conditions": [],
+        "strategy": []
+      },
+      "steps": [
+        {
+          "line": "展示小车与滑块",
+          "subtitle": "初始位置",
+          "visual_transform": [
+            {"action": "show", "target_id": "cart", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "block", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "小车与滑块一起向右滑动",
+          "subtitle": "同步位移",
+          "visual_transform": [
+            {"action": "shift", "target_id": "cart", "params": {"x": 2.6, "y": 0.0}, "duration": 1.0},
+            {"action": "shift", "target_id": "block", "params": {"x": 2.6, "y": 0.0}, "duration": 1.0}
+          ]
+        },
+        {
+          "line": "继续向右滑动",
+          "subtitle": "保持相对位置不变",
+          "visual_transform": [
+            {"action": "shift", "target_id": "cart", "params": {"x": 2.0, "y": 0.0}, "duration": 1.0},
+            {"action": "shift", "target_id": "block", "params": {"x": 2.0, "y": 0.0}, "duration": 1.0}
+          ]
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [-6, 6],
+        "y_range": [-3.5, 3.5],
+        "children": [
+          {
+            "type": "ground",
+            "start": [-6, -2.8],
+            "end": [6, -2.8]
+          },
+          {
+            "type": "platform",
+            "pos": [0.0, -2.6],
+            "width": 10.0,
+            "height": 0.3,
+            "hatch": false
+          },
+          {
+            "type": "cart",
+            "pos": [-3.5, -2.2],
+            "id": "cart",
+            "visible": false
+          },
+          {
+            "type": "block",
+            "pos": [-3.5, -1.6],
+            "width": 1.0,
+            "height": 0.6,
+            "id": "block",
+            "visible": false
+          }
+        ]
+      }
+    }
+  ]
+}

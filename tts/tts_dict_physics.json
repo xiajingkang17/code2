@@ -1,0 +1,55 @@
+{
+  "name": "physics",
+  "description": "High school physics units and symbols",
+  "raw": {
+    "regex": [
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*kg\\s*[·*]\\s*m\\s*/\\s*s\\b", "replace": "\\1 千克米每秒", "flags": "i"},
+      {"pattern": "\\bkg\\s*[·*]\\s*m\\s*/\\s*s\\b", "replace": "千克米每秒", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*N\\s*[·*]\\s*m\\b", "replace": "\\1 牛顿米"},
+      {"pattern": "\\bN\\s*[·*]\\s*m\\b", "replace": "牛顿米"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*m\\s*/\\s*s\\s*\\^\\s*\\{?2\\}?\\b", "replace": "\\1 米每秒平方", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*m\\s*/\\s*s²\\b", "replace": "\\1 米每秒平方", "flags": "i"},
+      {"pattern": "\\bm\\s*/\\s*s\\s*\\^\\s*\\{?2\\}?\\b", "replace": "米每秒平方", "flags": "i"},
+      {"pattern": "\\bm\\s*/\\s*s²\\b", "replace": "米每秒平方", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*m\\s*/\\s*s\\b", "replace": "\\1 米每秒", "flags": "i"},
+      {"pattern": "\\bm\\s*/\\s*s\\b", "replace": "米每秒", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*km/h\\b", "replace": "\\1 千米每小时", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*kg\\b", "replace": "\\1 千克", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*g\\b", "replace": "\\1 克", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*cm\\b", "replace": "\\1 厘米", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*mm\\b", "replace": "\\1 毫米", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*m\\b", "replace": "\\1 米", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*s\\b", "replace": "\\1 秒", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*N\\b", "replace": "\\1 牛顿"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*J\\b", "replace": "\\1 焦耳"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*W\\b", "replace": "\\1 瓦"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*Pa\\b", "replace": "\\1 帕"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*V\\b", "replace": "\\1 伏"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*A\\b", "replace": "\\1 安"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*Ω\\b", "replace": "\\1 欧姆"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*Hz\\b", "replace": "\\1 赫兹"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*C\\b", "replace": "\\1 库仑"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*T\\b", "replace": "\\1 特斯拉"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*rad\\b", "replace": "\\1 弧度", "flags": "i"},
+      {"pattern": "(\\d+(?:\\.\\d+)?)\\s*deg\\b", "replace": "\\1 度", "flags": "i"},
+      {"pattern": "\\^\\s*\\\\circ", "replace": " 度"},
+      {"pattern": "\\\\mu\\b", "replace": "摩擦因数 μ"},
+      {"pattern": "(?<![A-Za-z0-9])v(?=\\s*[_^=+\\-*/\\d])", "replace": "速度 v"},
+      {"pattern": "(?<![A-Za-z0-9])a(?=\\s*[_^=+\\-*/\\d])", "replace": "加速度 a"},
+      {"pattern": "(?<![A-Za-z0-9])F(?=\\s*[_^=+\\-*/\\d])", "replace": "力 F"},
+      {"pattern": "(?<![A-Za-z0-9])m(?=\\s*[_^=+\\-*/\\d])", "replace": "质量 m"},
+      {"pattern": "(?<![A-Za-z0-9])g(?=\\s*[_^=+\\-*/\\d])", "replace": "重力加速度 g"},
+      {"pattern": "(?<![A-Za-z0-9])k(?=\\s*[_^=+\\-*/\\d])", "replace": "弹簧劲度系数 k"},
+      {"pattern": "(?<![A-Za-z0-9])U(?=\\s*[_^=+\\-*/\\d])", "replace": "电压 U"},
+      {"pattern": "(?<![A-Za-z0-9])I(?=\\s*[_^=+\\-*/\\d])", "replace": "电流 I"},
+      {"pattern": "(?<![A-Za-z0-9])R(?=\\s*[_^=+\\-*/\\d])", "replace": "电阻 R"},
+      {"pattern": "(?<![A-Za-z0-9])N(?=\\s*[_^=+\\-*/\\d])", "replace": "牛顿 N"}
+    ]
+  },
+  "speech": {
+    "literal": {
+      "°": "度",
+      "Ω": "欧姆"
+    }
+  }
+}

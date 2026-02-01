@@ -1,0 +1,761 @@
+{
+  "problem_full_text": "质量为 $2\\text{ kg}$ 的滑块\n从倾角 $37^\\circ$、长度 $5\\text{ m}$\n的粗糙斜面顶端由静止释放，\n斜面动摩擦因数 $0.20$。\n滑块滑到底端后进入与之\n光滑连接的水平粗糙面，\n水平面动摩擦因数 $0.10$。\n取 $g=10\\text{ m/s}^2$，\n且 $\\sin37^\\circ=0.6$，\n$\\cos37^\\circ=0.8$。\n求：\n(1) 滑块在斜面上的\n加速度大小；\n(2) 滑块到达斜面底端\n时的速度大小；\n(3) 滑块进入水平面后\n还能滑行的距离；\n(4) 滑块从释放到最终\n停下所用的总时间。",
+  "stem": "质量为 $2\\text{ kg}$ 的滑块从倾角 $37^\\circ$、长度 $5\\text{ m}$ 的粗糙斜面顶端由静止释放，斜面动摩擦因数 $0.20$。滑块滑到底端后进入与之光滑连接的水平粗糙面，水平面动摩擦因数 $0.10$。取 $g=10\\text{ m/s}^2$，且 $\\sin37^\\circ=0.6$，$\\cos37^\\circ=0.8$。",
+  "questions": [
+    {
+      "question_text": "滑块在斜面上的加速度大小",
+      "analysis": {
+        "formulas": [
+          "$F_{\\text{net}} = ma$",
+          "$f = \\mu N$"
+        ],
+        "conditions": [
+          "$\\theta=37^\\circ$，$\\sin37^\\circ=0.6, \\cos37^\\circ=0.8$",
+          "初速度为 $0$，沿斜面向下运动"
+        ],
+        "strategy": [
+          "对滑块进行受力分析，求出合外力",
+          "利用牛顿第二定律列式求解加速度"
+        ]
+      },
+      "steps": [
+        {
+          "line": "$G_x = mg\\sin\\theta$",
+          "subtitle": "将重力分解为沿斜面和垂直斜面的分力，沿斜面分力是动力",
+          "narration": "将重力分解为沿斜面和垂直斜面的分力，沿斜面分力是动力"
+        },
+        {
+          "line": "$N = mg\\cos\\theta$",
+          "subtitle": "垂直斜面方向受力平衡，支持力等于重力垂直分力",
+          "narration": "垂直斜面方向受力平衡，支持力等于重力垂直分力"
+        },
+        {
+          "line": "$f_1 = \\mu_1 N = \\mu_1 mg\\cos\\theta$",
+          "subtitle": "根据滑动摩擦力公式计算阻力",
+          "narration": "根据滑动摩擦力公式计算阻力"
+        },
+        {
+          "line": "$mg\\sin\\theta - \\mu_1 mg\\cos\\theta = ma_1$",
+          "subtitle": "取沿斜面向下为正方向，合外力等于质量乘以加速度",
+          "narration": "取沿斜面向下为正方向，合外力等于质量乘以加速度"
+        },
+        {
+          "line": "$a_1 = g(\\sin\\theta - \\mu_1 \\cos\\theta)$",
+          "subtitle": "等式两边消去质量 $m$，得到加速度表达式",
+          "narration": "等式两边消去质量 m，得到加速度表达式"
+        },
+        {
+          "line": "$a_1 = 10 \\times (0.6 - 0.20 \\times 0.8)$",
+          "subtitle": "将 $g=10$、$\\sin37^\\circ=0.6$、$\\cos37^\\circ=0.8$、$\\mu_1=0.20$ 代入计算",
+          "narration": "将 重力加速度 g 等于 10、sin37 度 等于 0.6、cos37 度 等于 0.8、摩擦因数 μ 下标 1 等于 0.20 代入计算"
+        },
+        {
+          "line": "$a_1 = 4.4\\text{ m/s}^2$",
+          "subtitle": "经过算术运算得到加速度大小为 $4.4\\text{ m/s}^2$",
+          "narration": "经过算术运算得到加速度大小为 4.4 米每秒 的 2 次方"
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [
+          0.0,
+          6.0
+        ],
+        "y_range": [
+          0.0,
+          4.0
+        ],
+        "children": [
+          {
+            "id": "slope",
+            "type": "inclined_plane",
+            "start": [
+              0,
+              3.02
+            ],
+            "end": [
+              4,
+              0
+            ],
+            "color": "#ffffff",
+            "stroke_width": 2.6
+          },
+          {
+            "type": "group",
+            "id": "block",
+            "angle_base_deg": -37.052804540912,
+            "children": [
+              {
+                "id": "block_shape",
+                "type": "block",
+                "pos": [
+                  0.18076524012395045,
+                  3.25942415910457
+                ],
+                "width": 0.6,
+                "height": 0.6,
+                "fill_opacity": 0.0,
+                "color": "#ffffff",
+                "stroke_width": 2.8,
+                "angle_deg": -37.052804540912
+              },
+              {
+                "type": "point",
+                "id": "block_anchor",
+                "pos": [
+                  0.0,
+                  3.02
+                ],
+                "radius": 0.04,
+                "visible": false
+              }
+            ]
+          }
+        ],
+        "diagram_spec": {
+          "x_range": [
+            0,
+            6
+          ],
+          "y_range": [
+            0,
+            4
+          ],
+          "u": 1,
+          "origin": [
+            4,
+            0
+          ],
+          "aligned": "bottom_anchor",
+          "objects": [
+            {
+              "id": "slope",
+              "type": "inclined_plane",
+              "start": [
+                0,
+                3.02
+              ],
+              "end": [
+                4,
+                0
+              ]
+            },
+            {
+              "id": "block",
+              "type": "block",
+              "pos": [
+                0,
+                3.02
+              ],
+              "width": 0.6,
+              "height": 0.4
+            },
+            {
+              "id": "label_theta",
+              "type": "text",
+              "pos": [
+                1,
+                2.5
+              ],
+              "content": "37°"
+            }
+          ]
+        }
+      },
+      "model_spec": {
+        "units": [
+          "m",
+          "s",
+          "kg",
+          "N"
+        ],
+        "stage": "Stage1",
+        "forces": [
+          "Gravity ($mg$)",
+          "Support ($N$)",
+          "Friction ($f_1$)"
+        ],
+        "progress_func": "$s_1(t) = \\frac{1}{2} a_1 t^2$"
+      },
+      "diagram_spec": {
+        "x_range": [
+          0,
+          6
+        ],
+        "y_range": [
+          0,
+          4
+        ],
+        "u": 1,
+        "origin": [
+          4,
+          0
+        ],
+        "aligned": "bottom_anchor",
+        "objects": [
+          {
+            "id": "slope",
+            "type": "inclined_plane",
+            "start": [
+              0,
+              3.02
+            ],
+            "end": [
+              4,
+              0
+            ]
+          },
+          {
+            "id": "block",
+            "type": "block",
+            "pos": [
+              0,
+              3.02
+            ],
+            "width": 0.6,
+            "height": 0.4
+          },
+          {
+            "id": "label_theta",
+            "type": "text",
+            "pos": [
+              1,
+              2.5
+            ],
+            "content": "37°"
+          }
+        ]
+      },
+      "motion_spec": {
+        "bodies": [
+          {
+            "id": "block",
+            "type": "block"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "slope",
+            "type": "track"
+          }
+        ],
+        "phases": [
+          {
+            "id": "accelerating_down",
+            "body_id": "block",
+            "track_id": "slope",
+            "s_phys": "2.2 t^2",
+            "t_range": [
+              0,
+              1.51
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "question_text": "滑块到达斜面底端时的速度大小",
+      "analysis": {
+        "formulas": [
+          "$v^2 - v_0^2 = 2as$"
+        ],
+        "conditions": [
+          "初速度 $v_0 = 0$",
+          "加速度 $a_1 = 4.4\\text{ m/s}^2$",
+          "位移 $L = 5\\text{ m}$"
+        ],
+        "strategy": [
+          "直接运用运动学公式计算末速度"
+        ]
+      },
+      "steps": [
+        {
+          "line": "$v_1^2 - 0^2 = 2a_1 L$",
+          "subtitle": "选择不涉及时间的公式 $v^2 - v_0^2 = 2ax$",
+          "narration": "选择不涉及时间的公式 v 的 2 次方 减 v 下标 0 的 2 次方 等于 2ax"
+        },
+        {
+          "line": "$v_1^2 = 2 \\times 4.4 \\times 5$",
+          "subtitle": "将加速度 $4.4$ 和位移 $5$ 代入方程",
+          "narration": "将加速度 4.4 和位移 5 代入方程"
+        },
+        {
+          "line": "$v_1^2 = 44$",
+          "subtitle": "算出速度的平方",
+          "narration": "算出速度的平方"
+        },
+        {
+          "line": "$v_1 = \\sqrt{44} = 2\\sqrt{11}\\text{ m/s}$",
+          "subtitle": "开平方得到底端速度，保留根号形式以备后续计算",
+          "narration": "开平方得到底端速度，保留根号形式以备后续计算"
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [
+          0.0,
+          6.0
+        ],
+        "y_range": [
+          0.0,
+          4.0
+        ],
+        "children": [
+          {
+            "id": "block",
+            "type": "block",
+            "pos": [
+              3.6,
+              0.24
+            ],
+            "fill_opacity": 0.0,
+            "color": "#ffffff",
+            "width": 0.8,
+            "height": 0.8,
+            "stroke_width": 2.8
+          }
+        ],
+        "diagram_spec": {
+          "x_range": [
+            0,
+            6
+          ],
+          "y_range": [
+            0,
+            4
+          ],
+          "u": 1,
+          "origin": [
+            4,
+            0
+          ],
+          "aligned": "bottom_anchor",
+          "objects": [
+            {
+              "id": "block",
+              "type": "block",
+              "pos": [
+                3.6,
+                0.24
+              ]
+            }
+          ]
+        }
+      },
+      "model_spec": {
+        "event": "Event1",
+        "state": "速度达到 $v_1 = \\sqrt{44}\\text{ m/s}$"
+      },
+      "diagram_spec": {
+        "x_range": [
+          0,
+          6
+        ],
+        "y_range": [
+          0,
+          4
+        ],
+        "u": 1,
+        "origin": [
+          4,
+          0
+        ],
+        "aligned": "bottom_anchor",
+        "objects": [
+          {
+            "id": "block",
+            "type": "block",
+            "pos": [
+              3.6,
+              0.24
+            ]
+          }
+        ]
+      },
+      "motion_spec": {
+        "bodies": [
+          {
+            "id": "block",
+            "type": "block"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "slope",
+            "type": "track"
+          }
+        ],
+        "phases": [
+          {
+            "id": "reach_bottom",
+            "body_id": "block",
+            "track_id": "slope",
+            "s_phys": "2.2 t^2",
+            "t_range": [
+              0,
+              1.51
+            ],
+            "events": [
+              "$v = \\sqrt{44}\\text{ m/s}$"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "question_text": "滑块进入水平面后还能滑行的距离",
+      "analysis": {
+        "formulas": [
+          "$f = ma$",
+          "$v^2 - v_0^2 = 2as$"
+        ],
+        "conditions": [
+          "水平面摩擦因数 $\\mu_2=0.10$",
+          "末速度 $v = 0$"
+        ],
+        "strategy": [
+          "计算水平面加速度",
+          "计算减速至停止的位移"
+        ]
+      },
+      "steps": [
+        {
+          "line": "$f_2 = \\mu_2 mg$",
+          "subtitle": "水平方向仅受滑动摩擦力",
+          "narration": "水平方向仅受滑动摩擦力"
+        },
+        {
+          "line": "$a_2 = \\frac{f_2}{m} = \\mu_2 g$",
+          "subtitle": "牛顿第二定律求减速度",
+          "narration": "牛顿第二定律求减速度"
+        },
+        {
+          "line": "$a_2 = 0.10 \\times 10 = 1\\text{ m/s}^2$",
+          "subtitle": "计算得到减速度为 $1\\text{ m/s}^2$",
+          "narration": "计算得到减速度为 1 米每秒 的 2 次方"
+        },
+        {
+          "line": "$0 - v_1^2 = -2a_2 s$",
+          "subtitle": "应用匀减速运动公式，末速度为0",
+          "narration": "应用匀减速运动公式，末速度为0"
+        },
+        {
+          "line": "$s = \\frac{v_1^2}{2a_2}$",
+          "subtitle": "变形求位移",
+          "narration": "变形求位移"
+        },
+        {
+          "line": "$s = 22\\text{ m}$",
+          "subtitle": "利用(2)中计算得到的速度平方值，简化计算；算出滑行距离为 $22\\text{ m}$",
+          "narration": "利用(2)中计算得到的速度平方值，简化计算；算出滑行距离为 22 m"
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [
+          0.0,
+          14.0
+        ],
+        "y_range": [
+          0.0,
+          4.0
+        ],
+        "children": [
+          {
+            "id": "slope",
+            "type": "inclined_plane",
+            "start": [
+              0,
+              1.5
+            ],
+            "end": [
+              2,
+              0
+            ],
+            "color": "#ffffff",
+            "stroke_width": 2.6
+          },
+          {
+            "id": "ground",
+            "type": "horizontal_surface",
+            "start": [
+              2,
+              0
+            ],
+            "end": [
+              9.5,
+              0.0
+            ],
+            "color": "#ffffff",
+            "stroke_width": 2.6
+          },
+          {
+            "type": "group",
+            "id": "block",
+            "angle_base_deg": 0.0,
+            "children": [
+              {
+                "id": "block_shape",
+                "type": "block",
+                "pos": [
+                  9.5,
+                  0.15
+                ],
+                "width": 0.3,
+                "height": 0.3,
+                "fill_opacity": 0.0,
+                "color": "#ffffff",
+                "stroke_width": 2.8,
+                "angle_deg": 0.0
+              },
+              {
+                "type": "point",
+                "id": "block_anchor",
+                "pos": [
+                  9.5,
+                  0.0
+                ],
+                "radius": 0.04,
+                "visible": false
+              }
+            ]
+          }
+        ],
+        "diagram_spec": {
+          "x_range": [
+            0,
+            14
+          ],
+          "y_range": [
+            0,
+            4
+          ],
+          "u": 2,
+          "origin": [
+            2,
+            0
+          ],
+          "objects": [
+            {
+              "id": "slope",
+              "type": "inclined_plane",
+              "start": [
+                0,
+                1.5
+              ],
+              "end": [
+                2,
+                0
+              ]
+            },
+            {
+              "id": "ground",
+              "type": "horizontal_surface",
+              "start": [
+                2,
+                0
+              ],
+              "end": [
+                13,
+                0
+              ]
+            },
+            {
+              "id": "block",
+              "type": "block",
+              "pos": [
+                13,
+                0
+              ],
+              "width": 0.3,
+              "height": 0.2
+            }
+          ]
+        }
+      },
+      "model_spec": {
+        "stage": "Stage2",
+        "progress_func": "$s_2(t) = v_1 t - \\frac{1}{2} a_2 t^2$"
+      },
+      "diagram_spec": {
+        "x_range": [
+          0,
+          14
+        ],
+        "y_range": [
+          0,
+          4
+        ],
+        "u": 2,
+        "origin": [
+          2,
+          0
+        ],
+        "objects": [
+          {
+            "id": "slope",
+            "type": "inclined_plane",
+            "start": [
+              0,
+              1.5
+            ],
+            "end": [
+              2,
+              0
+            ]
+          },
+          {
+            "id": "ground",
+            "type": "horizontal_surface",
+            "start": [
+              2,
+              0
+            ],
+            "end": [
+              13,
+              0
+            ]
+          },
+          {
+            "id": "block",
+            "type": "block",
+            "pos": [
+              13,
+              0
+            ],
+            "width": 0.3,
+            "height": 0.2
+          }
+        ]
+      },
+      "motion_spec": {
+        "bodies": [
+          {
+            "id": "block",
+            "type": "block"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "ground",
+            "type": "horizontal_surface"
+          }
+        ],
+        "phases": [
+          {
+            "id": "decelerating",
+            "body_id": "block",
+            "track_id": "ground",
+            "s_phys": "\\sqrt{44}t - 0.5 t^2",
+            "t_range": [
+              0,
+              "t_{\\text{stop}}"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "question_text": "滑块从释放到最终停下所用的总时间",
+      "analysis": {
+        "formulas": [
+          "$x = v_0 t + \\frac{1}{2}at^2$",
+          "$v = v_0 + at$"
+        ],
+        "conditions": [
+          "全程分为两段：斜面加速、水平面减速"
+        ],
+        "strategy": [
+          "分别计算斜面运动时间 $t_1$ 和水平面运动时间 $t_2$",
+          "求和得到总时间"
+        ]
+      },
+      "steps": [
+        {
+          "line": "$t_1 = \\sqrt{\\frac{2L}{a_1}}$",
+          "subtitle": "利用位移公式反解时间",
+          "narration": "利用位移公式反解时间"
+        },
+        {
+          "line": "$t_1 = \\frac{5}{\\sqrt{11}}\\text{ s}$",
+          "subtitle": "化简根式，保留分母有理化前的形式或直接计算",
+          "narration": "化简根式，保留分母有理化前的形式或直接计算"
+        },
+        {
+          "line": "$t_2 = \\frac{v_1}{a_2}$",
+          "subtitle": "利用速度公式反解减速时间",
+          "narration": "利用速度公式反解减速时间"
+        },
+        {
+          "line": "$t_2 = \\frac{\\sqrt{44}}{1} = \\sqrt{44} = 2\\sqrt{11}\\text{ s}$",
+          "subtitle": "代入速度和加速度值",
+          "narration": "代入速度和加速度值"
+        },
+        {
+          "line": "$t_{\\text{total}} = t_1 + t_2$",
+          "subtitle": "总时间为两段之和",
+          "narration": "总时间为两段之和"
+        },
+        {
+          "line": "$t_{\\text{total}} = \\frac{5}{\\sqrt{11}} + 2\\sqrt{11}$",
+          "subtitle": "将 $t_1$ 和 $t_2$ 的表达式相加",
+          "narration": "将 t 下标 1 和 t 下标 2 的表达式相加"
+        },
+        {
+          "line": "$t_{\\text{total}} = \\frac{5 + 22}{\\sqrt{11}} = \\frac{27}{\\sqrt{11}}\\text{ s}$",
+          "subtitle": "进行根式加减运算",
+          "narration": "进行根式加减运算"
+        },
+        {
+          "line": "$t_{\\text{total}} \\approx 8.14\\text{ s}$",
+          "subtitle": "化简并给出近似值",
+          "narration": "化简并给出近似值"
+        }
+      ],
+      "model_spec": {
+        "event": "Event_Final",
+        "total_time": "$t_{\\text{total}}$"
+      },
+      "motion_spec": {
+        "bodies": [
+          {
+            "id": "block",
+            "type": "block"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "slope",
+            "type": "track"
+          },
+          {
+            "id": "ground",
+            "type": "horizontal_surface"
+          }
+        ],
+        "phases": [
+          {
+            "id": "phase1",
+            "body_id": "block",
+            "track_id": "slope",
+            "s_phys": "2.2 t^2",
+            "t_range": [
+              0,
+              "5/\\sqrt{11}"
+            ]
+          },
+          {
+            "id": "phase2",
+            "body_id": "block",
+            "track_id": "ground",
+            "s_phys": "5 + \\sqrt{44}(t-t_1) - 0.5(t-t_1)^2",
+            "t_range": [
+              "5/\\sqrt{11}",
+              "27/\\sqrt{11}"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

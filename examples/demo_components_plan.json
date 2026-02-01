@@ -1,0 +1,54 @@
+{
+  "problem_full_text": "通用组件库演示\n(1) 坐标系与网格",
+  "stem": "通用组件库演示",
+  "questions": [
+    {
+      "question_text": "坐标系与网格",
+      "analysis": {
+        "formulas": [],
+        "conditions": [],
+        "strategy": []
+      },
+      "steps": [
+        {
+          "line": "展示网格与坐标轴",
+          "subtitle": "显示课堂风格坐标系"
+        },
+        {
+          "line": "标注数轴与刻度",
+          "subtitle": "强调刻度与数值"
+        },
+        {
+          "line": "完成组件库演示",
+          "subtitle": "结束演示"
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [-5, 5],
+        "y_range": [-3, 3],
+        "children": [
+          {
+            "type": "grid",
+            "x_step": 1,
+            "y_step": 1,
+            "bold_every": 5
+          },
+          {
+            "type": "axes2d",
+            "x_range": [-5, 5, 1],
+            "y_range": [-3, 3, 1],
+            "show_numbers": true,
+            "label_axes": true
+          },
+          {
+            "type": "number_line",
+            "range": [-5, 5, 1],
+            "y": -2.4,
+            "label": "t"
+          }
+        ]
+      }
+    }
+  ]
+}

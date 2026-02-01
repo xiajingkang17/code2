@@ -1,0 +1,126 @@
+{
+  "problem_full_text": "B2 contact & constraints review\n(1) Components",
+  "stem": "B2 contact & constraints review",
+  "questions": [
+    {
+      "question_text": "Contact & constraints",
+      "analysis": { "formulas": [], "conditions": [], "strategy": [] },
+      "steps": [
+        {
+          "line": "Show horizontal_surface",
+          "subtitle": "horizontal_surface",
+          "visual_transform": [
+            { "action": "show", "target_id": "b2_horizontal", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show smooth_surface",
+          "subtitle": "smooth_surface",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_horizontal", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_smooth", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show rough_surface",
+          "subtitle": "rough_surface",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_smooth", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_rough", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show inclined_plane",
+          "subtitle": "inclined_plane",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_rough", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_incline", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show wall",
+          "subtitle": "wall",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_incline", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_wall", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show track_line",
+          "subtitle": "track_line",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_wall", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_track_line", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show track_arc",
+          "subtitle": "track_arc",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_track_line", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_track_arc", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show loop_the_loop_track",
+          "subtitle": "loop_the_loop_track",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_track_arc", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_loop", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show table_with_edge",
+          "subtitle": "table_with_edge",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_loop", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_table", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show conveyor_belt",
+          "subtitle": "conveyor_belt",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_table", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_conveyor", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show wedge",
+          "subtitle": "wedge",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_conveyor", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_wedge", "params": {}, "duration": 0.3 }
+          ]
+        },
+        {
+          "line": "Show pulley_support",
+          "subtitle": "pulley_support",
+          "visual_transform": [
+            { "action": "hide", "target_id": "b2_wedge", "params": {}, "duration": 0.2 },
+            { "action": "show", "target_id": "b2_pulley_support", "params": {}, "duration": 0.3 }
+          ]
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [-6, 6],
+        "y_range": [-3.5, 3.5],
+        "children": [
+          { "type": "horizontal_surface", "pos": [-3.5, 1.8], "length": 5.0, "id": "b2_horizontal", "visible": false },
+          { "type": "smooth_surface", "pos": [-3.5, 1.8], "length": 5.0, "id": "b2_smooth", "visible": false },
+          { "type": "rough_surface", "pos": [-3.5, 1.8], "length": 5.0, "tick_count": 10, "id": "b2_rough", "visible": false },
+          { "type": "inclined_plane", "base": [-4.5, -0.8], "length": 4.0, "angle_deg": 25, "id": "b2_incline", "visible": false },
+          { "type": "wall", "pos": [2.0, -0.8], "height": 2.4, "id": "b2_wall", "visible": false },
+          { "type": "track_line", "pos": [-3.0, -1.8], "length": 4.2, "angle_deg": 8, "gap": 0.16, "id": "b2_track_line", "visible": false },
+          { "type": "track_arc", "center": [2.4, -1.2], "radius": 1.0, "start_angle_deg": -90, "angle_deg": 180, "id": "b2_track_arc", "visible": false },
+          { "type": "loop_the_loop_track", "center": [-2.8, -1.2], "radius": 1.0, "entry_length": 1.2, "exit_length": 1.2, "id": "b2_loop", "visible": false },
+          { "type": "table_with_edge", "pos": [3.2, -0.2], "length": 3.2, "edge_height": 1.0, "edge_side": "right", "id": "b2_table", "visible": false },
+          { "type": "conveyor_belt", "pos": [0.5, -2.5], "length": 4.0, "thickness": 0.3, "arrow_count": 3, "direction": 1.0, "id": "b2_conveyor", "visible": false },
+          { "type": "wedge", "pos": [-0.6, -2.0], "width": 1.6, "height": 0.9, "orientation": "right", "id": "b2_wedge", "visible": false },
+          { "type": "pulley_support", "pos": [4.8, -2.2], "height": 2.0, "width": 1.2, "id": "b2_pulley_support", "visible": false }
+        ]
+      }
+    }
+  ]
+}
