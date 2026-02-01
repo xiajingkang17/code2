@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.pyd
+.env
+.env.*
+.venv/
+venv/
+media/
+*.mp4
+*.wav
+*.log
+*.tmp
+.pytest_cache/
+.mypy_cache/
+*.egg-info/

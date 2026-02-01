@@ -1,0 +1,108 @@
+{
+  "problem_full_text": "通用组件库演示\n(1) 3D 基元组件",
+  "stem": "通用组件库演示",
+  "questions": [
+    {
+      "question_text": "3D 基元组件",
+      "analysis": {
+        "formulas": [],
+        "conditions": [],
+        "strategy": []
+      },
+      "steps": [
+        {
+          "line": "展示 3D 点与线",
+          "subtitle": "Point3D / Line3D",
+          "visual_transform": [
+            {"action": "show", "target_id": "p3_point", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p3_line", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示 3D 向量与文字",
+          "subtitle": "Vector3D / Text3D",
+          "visual_transform": [
+            {"action": "hide", "target_id": "p3_point", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "p3_line", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "p3_vector", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p3_text", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示 3D 多边形与立方体",
+          "subtitle": "Polygon3D / Cube",
+          "visual_transform": [
+            {"action": "hide", "target_id": "p3_vector", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "p3_text", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "p3_poly", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "p3_cube", "params": {}, "duration": 0.4}
+          ]
+        }
+      ],
+      "visual": {
+        "type": "world3d",
+        "x_range": [-4, 4],
+        "y_range": [-3, 3],
+        "z_range": [-3, 3],
+        "children": [
+          {
+            "type": "axes3d",
+            "x_range": [-4, 4, 1],
+            "y_range": [-3, 3, 1],
+            "z_range": [-3, 3, 1],
+            "show_numbers": {"x": true, "y": false, "z": false},
+            "label_axes": true,
+            "axis_arrows": true,
+            "grid_planes": ["xy"],
+            "grid_step": 1,
+            "grid_bold_every": 2,
+            "label_offsets": {"x": 1, "y": -1, "z": 1},
+            "tip_length": 0.16
+          },
+          {
+            "type": "point3d",
+            "pos": [-2, 1, 1],
+            "label": "P",
+            "id": "p3_point",
+            "visible": false
+          },
+          {
+            "type": "line3d",
+            "start": [-3, -2, 0],
+            "end": [2, -1, 1],
+            "id": "p3_line",
+            "visible": false
+          },
+          {
+            "type": "vector3d",
+            "start": [0, 0, 0],
+            "end": [2, 1, 2],
+            "id": "p3_vector",
+            "visible": false
+          },
+          {
+            "type": "text3d",
+            "pos": [2.5, 0.5, 1.5],
+            "text": "3D",
+            "font_size": 26,
+            "id": "p3_text",
+            "visible": false
+          },
+          {
+            "type": "polygon3d",
+            "points": [[-1, -1, 0], [1, -1, 0.6], [0, 1, 0.2]],
+            "id": "p3_poly",
+            "visible": false
+          },
+          {
+            "type": "cube",
+            "center": [2.5, -1.5, 0.5],
+            "size": 1.4,
+            "id": "p3_cube",
+            "visible": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "problem_full_text": "通用组件库演示\n(1) B2 接触与约束环境",
+  "stem": "通用组件库演示",
+  "questions": [
+    {
+      "question_text": "B2 接触与约束环境",
+      "analysis": {
+        "formulas": [],
+        "conditions": [],
+        "strategy": []
+      },
+      "steps": [
+        {
+          "line": "展示光滑与粗糙水平面",
+          "subtitle": "Smooth / Rough Surface",
+          "visual_transform": [
+            {"action": "show", "target_id": "b2_smooth", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "b2_rough", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示斜面与墙",
+          "subtitle": "Inclined Plane / Wall",
+          "visual_transform": [
+            {"action": "hide", "target_id": "b2_smooth", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "b2_rough", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "b2_incline", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "b2_wall", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示直轨与圆弧轨道",
+          "subtitle": "Track Line / Track Arc",
+          "visual_transform": [
+            {"action": "hide", "target_id": "b2_incline", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "b2_wall", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "b2_track_line", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "b2_track_arc", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示竖直环形轨道与桌面边缘",
+          "subtitle": "Loop-the-Loop / Table Edge",
+          "visual_transform": [
+            {"action": "hide", "target_id": "b2_track_line", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "b2_track_arc", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "b2_loop", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "b2_table", "params": {}, "duration": 0.4}
+          ]
+        },
+        {
+          "line": "展示传送带、楔块与滑轮支架",
+          "subtitle": "Conveyor / Wedge / Pulley Support",
+          "visual_transform": [
+            {"action": "hide", "target_id": "b2_loop", "params": {}, "duration": 0.2},
+            {"action": "hide", "target_id": "b2_table", "params": {}, "duration": 0.2},
+            {"action": "show", "target_id": "b2_conveyor", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "b2_wedge", "params": {}, "duration": 0.4},
+            {"action": "show", "target_id": "b2_pulley_support", "params": {}, "duration": 0.4}
+          ]
+        }
+      ],
+      "visual": {
+        "type": "world2d",
+        "x_range": [-6, 6],
+        "y_range": [-3.5, 3.5],
+        "children": [
+          {
+            "type": "horizontal_surface",
+            "pos": [-3.0, 1.6],
+            "length": 4.0,
+            "id": "b2_smooth",
+            "visible": false
+          },
+          {
+            "type": "rough_surface",
+            "pos": [3.0, 1.6],
+            "length": 4.0,
+            "tick_count": 9,
+            "id": "b2_rough",
+            "visible": false
+          },
+          {
+            "type": "inclined_plane",
+            "base": [-5.0, -2.4],
+            "length": 4.2,
+            "angle_deg": 30,
+            "id": "b2_incline",
+            "visible": false
+          },
+          {
+            "type": "wall",
+            "pos": [2.8, -2.4],
+            "height": 2.6,
+            "id": "b2_wall",
+            "visible": false
+          },
+          {
+            "type": "track_line",
+            "pos": [-3.0, -0.6],
+            "length": 4.0,
+            "angle_deg": 12,
+            "gap": 0.18,
+            "id": "b2_track_line",
+            "visible": false
+          },
+          {
+            "type": "track_arc",
+            "center": [3.2, -0.6],
+            "radius": 1.2,
+            "start_angle_deg": -90,
+            "angle_deg": 180,
+            "id": "b2_track_arc",
+            "visible": false
+          },
+          {
+            "type": "loop_the_loop_track",
+            "center": [-2.6, -0.8],
+            "radius": 1.1,
+            "entry_length": 1.4,
+            "exit_length": 1.4,
+            "id": "b2_loop",
+            "visible": false
+          },
+          {
+            "type": "table_with_edge",
+            "pos": [3.2, -0.8],
+            "length": 3.4,
+            "edge_height": 1.2,
+            "edge_side": "right",
+            "id": "b2_table",
+            "visible": false
+          },
+          {
+            "type": "conveyor_belt",
+            "pos": [-3.2, -2.6],
+            "length": 3.4,
+            "thickness": 0.3,
+            "arrow_count": 3,
+            "direction": 1.0,
+            "id": "b2_conveyor",
+            "visible": false
+          },
+          {
+            "type": "wedge",
+            "pos": [1.4, -2.6],
+            "width": 1.8,
+            "height": 1.0,
+            "orientation": "right",
+            "id": "b2_wedge",
+            "visible": false
+          },
+          {
+            "type": "pulley_support",
+            "pos": [4.6, -2.6],
+            "height": 2.0,
+            "width": 1.2,
+            "id": "b2_pulley_support",
+            "visible": false
+          }
+        ]
+      }
+    }
+  ]
+}
